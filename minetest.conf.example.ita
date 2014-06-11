@@ -1,0 +1,967 @@
+#-------------------- larghezza: 80 caratteri monospazio ---------------------->
+#
+# Scarico di responsabilità
+# -------------------------
+#
+# La presente traduzione viene fornita come forma di cortesia a titolo gratuito
+# e non può essere ritenuta come un valido sostitutivo del documento originale
+# ufficiale in lingua Inglese perché:
+#
+#  - Non è promossa, né supportata, né appoggiata, né autorizzata dagli
+#    sviluppatori di Minetest.
+#  - Il traduttore non è un traduttore professionista.
+#  - Al momento della lettura potrebbe essere diventata obsoleta in quanto
+#    potrebbe essere stata scritta una nuova versione in Inglese.
+#
+# per questi motivi il testo seguente potrebbe contenere inesattezze e errori di
+# vario tipo e perciò il traduttore non si assume nessuna responsabilità legata
+# a problemi di qualsiasi tipo derivanti dall'utilizzo di questa traduzione, né
+# il traduttore potrà esserne ritenuto responsabile in alcun modo.
+#
+# Il traduttore consiglia espressamente di fare sempre riferimento al testo
+# originale ufficiale in lingua Inglese fornito assieme a Minetest.
+#
+# Questa traduzione è stata fatta in buona fede e al meglio delle possibilità
+# del traduttore, come contributo effettivo per gli utilizzatori di lingua
+# Italiana di Minetest.
+#
+# Utilizzando la presente traduzione accettate di sollevare il traduttore da
+# qualsiasi responsabilità così come accettate quanto prima espresso.
+#
+# Enki, Mercoledì 11 giugno 2014
+# Copyright: CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/deed.it
+# (Attribuzione - Condividi allo stesso modo 4.0 Internazionale)
+#
+#-------------------------------------------------------------------------------
+#
+# Questo file viene letto in modo predefinito da:
+#
+# ../minetest.conf
+# ../../minetest.conf
+#
+# Qualsiasi altro percorso può essere scelto fornendolo come parametro al
+# programma, ad es. "minetest.exe --config ../minetest.conf.esempio"
+#
+# In modo predefinito, tutte le impostazioni sono "commentate" (precedute dal
+# simbolo #, n.d.t.) e non attive.
+# Per attivarle togliete il # che le precede.
+#
+# Documentazione ulteriore:
+# http://wiki.minetest.net/
+#
+# AVVISO: Questo file potrebbe non essere aggiornato, fate riferimento al file
+#         defaultsettings.cpp per un elenco aggiornato:
+#
+# https://github.com/minetest/minetest/blob/master/src/defaultsettings.cpp
+#
+# Un comando di vim per convertire la maggior parte di defaultsettings.cpp nel
+# formato file .conf:
+#
+# :'<,'>s/\tsettings->setDefault("\([^"]*\)", "\([^"]*\)");.*/#\1 = \2/g
+#
+# Nota: Alcune delle impostazioni sono implementate in Lua
+
+####################
+#
+# Client e server
+#
+
+# Nome del personaggio; su un server questo è l'amministratore principale
+#name =
+
+
+####################
+#
+# Cose del client
+#
+
+# Porta a cui connettersi (UDP)
+#remote_port =
+
+# Impostazioni dei tasti
+# Si veda http://irrlicht.sourceforge.net/docu/namespaceirr.html#a54da2a0e231901735e3da1b0edf72eb3
+
+# Tasto "avanti"
+#keymap_forward = KEY_KEY_W
+
+# Tasto "indietro"
+#keymap_backward = KEY_KEY_S
+
+# Tasto "sinistra"
+#keymap_left = KEY_KEY_A
+
+# Tasto "destra"
+#keymap_right = KEY_KEY_D
+
+# Tasto "salto"
+#keymap_jump = KEY_SPACE
+
+# Tasto "strisciare"
+#keymap_sneak = KEY_LSHIFT
+
+# Tasto "inventario"
+#keymap_inventory = KEY_KEY_I
+
+# Tasto "scendere da una scala" / "correre" se in modalità veloce
+#keymap_special1 = KEY_KEY_E
+
+# Tasto "chat"
+#keymap_chat = KEY_KEY_T
+
+# Tasto "comando della consolle"
+#keymap_cmd = /
+
+# Tasto "apri consolle"
+#keyman_console = KEY_F10
+
+# Tasto "limite distanza di disegno"
+#keymap_rangeselect = KEY_KEY_R
+
+# Tasto "movimento libero / volo"
+#keymap_freemove = KEY_KEY_K
+
+# Tasto "modalità veloce"
+#keymap_fastmove = KEY_KEY_J
+
+# Tasto "istantanea"
+#keymap_screenshot = KEY_F12
+
+# Se l'impostazione è true keymap_special1 viene utilizzato per scendere dalle
+# scale e scendere quando si è in volo, al posto di keymap_sneak
+#aux1_descends = false
+
+# Cliccando due volte il tasto "salto" abilita la modalità di volo
+#doubletap_jump = false
+
+# Se l'impostazione è false aux1 viene utilizzato per volare velocemente
+#always_fly_fast = true
+
+####################
+#
+# Alcuni tasti (temporanei) per il debugging
+#
+
+# Stampa degli stack di debug
+#keymap_print_debug_stacks = KEY_KEY_P
+
+# Tasto "regolazione veloce" precedente
+#keymap_quicktune_prev = KEY_HOME
+
+# Tasto "regolazione veloce" successiva
+#keymap_quicktune_next = KEY_END
+
+# Tasto "regolazione veloce" decrementa
+#keymap_quicktune_dec = KEY_NEXT
+
+# Tasto "regolazione veloce" incrementa
+#keymap_quicktune_inc = KEY_PRIOR
+
+####################
+#
+# Numero minimo di fotogrammi per secondo (F.P.S.)
+# L'ammontare delle cose disegnate viene impostato dinamicamente in accordo con
+# questo numero
+#
+#wanted_fps = 30
+
+# Se i F.P.S. dovessero superare questo numero, limitarti "andando in sonno"
+# (per non sprecare potenza di calcolo non avendone benefici)
+#
+#fps_max = 60
+
+
+# Numero massimo di F.P.S. quando il gioco è in pausa
+#
+#pause_fps_max = 20
+
+####################
+#
+# Il raggio di aggiustamento permesso per l'aggiustamento automatico del raggio
+# di disegno
+#
+
+# Numero massimo di cubi
+#viewing_range_nodes_max = 160
+
+# Numero minimo di cubi
+#viewing_range_nodes_min = 35
+
+####################
+#
+# Dimensione iniziale della finestra
+#
+
+# Larghezza della finestra (in pixel)
+#screenW = 800
+
+# Altezza della finestra (in pixel)
+#screenH = 600
+
+# Modalità a schermo intero
+#fullscreen = false
+
+# Bit per pixel in modalità a schermo intero
+#fullscreen_bpp = 24
+
+# Opzione sperimentale, potrebbe causare spazi visibili tra i blocchi quando è
+# impostata a un numero superiore a 0
+#
+# "Full Scene Anti Aliasing" anche chiamato "Super Sampling Anti Aliasing"
+#fsaa = 0
+
+# Sincronizzazione verticale
+#vsync = false
+
+# Campo visivo (in gradi)
+#fov = 72
+
+# Indirizzo a cui connettersi (#vuoto = avviare un server locale)
+#address =
+
+# Abilitare l'inserimento casuale di dati da parte dell'utente, per prove
+#random_input = false
+
+# Tempo massimo per il client oltre il quale rimuovere dalla memoria i dati
+# inutilizzati della mappa (in secondi)
+#client_unload_unused_data_timeout = 600
+
+# Attivare o meno la nebbia alla fine dell'area visibile
+#enable_fog = true
+
+# Permettere che la superficie dell'acqua sia un po' più bassa; disabilitare
+# questa opzione per una velocità maggiore (l'opzione non è molto ottimizzata)
+#new_style_water = false
+
+# Numero massimo di liquidi elaborati per passo
+#liquid_loop_max = 10000
+
+# Aggiornare i liquidi ogni ... si raccomanda 0.2 per la modalità liquidi
+# limitati
+#liquid_update = 1.0
+
+# Abilitare le foglie migliori; disabilitare per una velocità maggiore
+#new_style_leaves = true
+
+# Abilitare l'illuminazione armoniosa con l'ambient occlusion semplice;
+# disabilitare per una velocità maggiore o per un'apparenza diversa.
+#smooth_lighting = true
+
+# Percorso della cartella immagini. Tutte le immagini vengono cercate qui per
+# prima cosa.
+#texture_path =
+
+# Base video.
+# Valori possibili: null, software, burningsvideo, direct3d8, direct3d9, opengl
+#video_driver = opengl
+
+# Movimento libero senza leggi fisiche, il tasto "giù" è keymap_special1
+#free_move = false
+
+# Movimento di avanzamento continuo (per le prove)
+#continuous_forward = false
+
+# Movimento veloce (keymap_special1)
+#fast_move = false
+
+# Invertire i tasti del mouse
+#invert_mouse = false
+
+# Abilitare / disabilitare le nuvole
+#enable_clouds = true
+
+# Altitudine delle nuvole
+#cloud_height = 120
+
+# Abilitare le nuvole in 3D
+#enable_3d_clouds = true
+
+# Usare una animazione con le nuvole per lo sfondo del menù principale
+#menu_clouds = true
+
+# Percorso per le istantanee
+#screenshot_path = .
+
+# Ammontare dell'ondeggiamento visivo (0 = nessuno, 1.0 = normale, 2.0 = doppio)
+#view_bobbing_amount = 1.0
+
+# Ammontare dell'ondeggiamento in caduta
+# (0 = nessuno, 1.0 = normale, 2.0 = doppio)
+#fall_bobbing_amount = 0.0
+
+####################
+#
+# Supporto 3D
+# allo stato attuale:
+#
+#     "none"       = nessuno
+#     "anaglyph"   = colore 3D ciano/magenta
+#     "interlaced" = supporto per la polarizzazione dello schermo
+#                    basato sulle righe pari/dispari
+#     "topbottom"  = divisione dello schermo tra parte alta e bassa
+#     "sidebyside" = divisione dello schermo tra un lato e l'altro
+#3d_mode = none
+
+# Intensità della parallasse 3D
+#3d_paralax_strength = 0.025
+
+# Colore di sfondo della consolle di chat nel gioco (R,G,B)
+#console_color = (0,0,0)
+
+# Trasparenza dello sfondo della consolle di chat nel gioco
+# (opacità, tra 0 e 255)
+#console_alpha = 200
+
+# Colore del bordo del quadrato di selezione (R,G,B)
+#selectionbox_color = (0,0,0)
+
+# Colore del mirino (R,G,B)
+#crosshair_color = (255,255,255)
+
+# Trasparenza del mirino (opacità, tra 0 e 255)
+#crosshair_alpha = 255
+
+# Scala dell'interfaccia grafica utente in base al valore specificato
+# dall'utente
+#gui_scaling = 1.0
+
+# Moltiplicatore della sensibilità del mouse
+#mouse_sensitivity = 0.2
+
+####################
+#
+# Impostazioni audio
+#
+
+# Abilitare l'audio
+#enable_sound = true
+
+# Volume dell'audio
+#sound_volume = 0.7
+
+# Se le animazioni delle immagini dei cubi non dovrebbero essere sincronizzate
+# per blocco di mappa
+#desynchronize_mapblock_texture_animation = true
+
+# Percentuale massima della finestra attuale da utilizzarsi per la barra di
+# scelta rapida (utile se c'è o se avete qualcosa da mostrare alla destra o
+# alla sinistra della barra
+#hud_hotbar_max_width = 1.0
+
+####################
+#
+# Impostazioni di filtraggio delle immagini
+#
+
+# MIP map ( https://it.wikipedia.org/wiki/MIP_map )
+#mip_map = false
+
+# Filtro anisotropico ( https://it.wikipedia.org/wiki/Filtro_anisotropico )
+#anisotropic_filter = false
+
+# Filtro bilineare
+# ( https://it.wikipedia.org/wiki/Filtro_bilineare#Filtro_bilineare )
+#bilinear_filter = false
+
+# Filtro trilineare
+# ( https://it.wikipedia.org/wiki/Filtro_trilineare#Filtro_trilineare )
+#trilinear_filter = false
+
+# Impostare a true per generare anticipatamente tutti i modelli degli oggetti
+#preload_item_visuals = true
+
+# Impostare a true per abilitare gli shader. Disabilitare se l'impostazione
+# video_driver = direct3d9/8.
+# ( https://it.wikipedia.org/wiki/Shader )
+#enable_shaders = true
+
+# Impostare a true per abilitare il bump mapping. Richiede che siano attivati
+# gli shader
+# ( https://it.wikipedia.org/wiki/Bump_mapping )
+#enable_bumpmapping = false
+
+# Impostare a true per abilitare la generazione al volo delle normal map
+# (effetto rilievo). Richiede che sia attivato il bump mapping. 
+# ( https://it.wikipedia.org/wiki/Normal_mapping )
+#generate_normalmaps = false
+
+# Stabilisce il passo di campionamento delle immagini (0 - 2)
+# Maggiore è il valore e più lisce saranno le normal map
+#normalmaps_smooth = 1
+
+# Intensità delle normal map generate
+#normalmaps_strength = 0.6
+
+# Impostare a true per abilitare il parallax occlusion mapping, che è una
+# versione migliore del parallax mapping
+# ( https://it.wikipedia.org/wiki/Parallax_mapping )
+# Richiede che siano attivati gli shader
+#enable_parallax_occlusion = false
+
+# Scala dell'effetto di parallax occlusion
+#parallax_occlusion_scale = 0.08
+
+# Fattore di regolazione dell'effetto di parallax occlusion effect, normalmente
+# è scala/2
+#parallax_occlusion_bias = 0.04
+
+# Impostare a true per abilitare l'ondeggiamento dell'acqua. Richiede che siano
+# attivati gli shader.
+#enable_waving_water = false
+
+####################
+#
+# Parametri per l'ondeggiamento dell'acqua:
+#
+
+# Altezza dell'onda
+#water_wave_height = 1.0
+
+# Lunghezza dell'onda
+#water_wave_length = 20.0
+
+# Velocità dell'onda
+#water_wave_speed = 5.0
+
+# Impostare a true per abilitare l'ondeggiamento delle foglie. Richiede che
+# siano attivati gli shader.
+#enable_waving_leaves = false
+
+# Impostare a true per abilitare l'ondeggiamento delle piante. Richiede che
+# siano attivati gli shader.
+#enable_waving_plants = false
+
+# Tempo in secondi richiesto tra click ripetuti del tasto destro del mouse
+# mentre si tiene premuto quello sinistro
+#repeat_rightclick_time = 0.25
+
+# Fare in modo che i colori del cielo e della nebbia dipendano dall'ora del
+# giorno (alba/tramonto) e dalla direzione dello sguardo
+#directional_colored_fog = true
+
+# Tempo di scadenza predefinito per cURL, in millisecondi
+# Ha effetto solo se si è compilato attivando cURL
+#curl_timeout = 5000
+
+# Limita il numero di richieste HTTP parallele. Ha effetto su:
+#
+# - recupero dei file multimediali se il server usa l'impostazione remote_media
+# - scaricamento dell'elenco e dell'annuncio dei server
+# - scaricamenti effettuati tramite il menù principale (es.: gestore moduli)
+#
+# Ha effetto solo se si è compilato attivando cURL
+#
+#curl_parallel_limit = 8
+
+# Abilitare l'uso del fornitore remoto di file multimediali (se questo viene
+# fornito dal server)
+#enable_remote_media_server = true
+
+# URL dell'elenco dei server mostrato nella linguetta per il gioco in linea
+#serverlist_url = servers.minetest.net
+
+# File contenuto in client/serverlist/ che registra i vostri server preferiti
+# e li mostra nella linguetta per il gioco in linea
+#serverlist_file = favoriteservers.txt
+
+# Se si debbano usare i caratteri freetype. Richiede che sia stato attivato il
+# supporto a freetype durante la compilazione
+#freetype = true
+
+# Percorso al carattere TrueTypeFont o bitmap
+#font_path = fonts/liberationsans.ttf
+
+# Dimensione del carattere
+#font_size = 13
+
+# Spostamento dell'ombra del carattere, se 0 l'ombra non verrà disegnata.
+#font_shadow = 1
+
+# Trasparenza dell'ombra del carattere (opacità, tra 0 e 255)
+#font_shadow_alpha = 128
+
+# Percorso del carattere monospaziato
+#mono_font_path = fonts/liberationmono.ttf
+
+# Dimensione del carattere monospaziato
+#mono_font_size = 13
+
+# Questo carattere di ripiego verrà usato per certe lingue
+#fallback_font_path = fonts/DroidSansFallbackFull.ttf
+
+# Dimensione del carattere di ripiego
+#fallback_font_size = 13
+
+# Ombra del carattere di ripiego
+#fallback_font_shadow = 1
+
+# Trasparenza del carattere di ripiego
+#fallback_font_shadow_alpha = 128
+
+####################
+#
+# Cose del server
+#
+
+# Porta di rete di ascolto (UDP)
+#port = 30000
+
+# Indirizzo collegato
+#bind_address =
+
+# Nome del server
+#server_name = Minetest server
+
+# Descrizione del server
+#server_description = mine here
+
+# Nome di dominio del server
+#server_address = game.minetest.net
+
+# Sito web del server
+#server_url = http://minetest.net
+
+# Notifica automatica al server principale
+#server_announce = 0
+
+# Notificare a questo server principale. Se volete usare il vostro indirizzo
+# ipv6 usate serverlist_url = v6.servers.minetest.net
+#serverlist_url = servers.minetest.net
+
+# Gioco prestabilito (predefinito quando si crea un nuovo mondo)
+#default_game = minetest
+
+# Cartella del mondo (qui si immagazzina tutto quello che c'è nel mondo)
+#map-dir = /custom/world
+
+# Messaggio del giorno
+#motd = Benvenuti in questo meraviglioso server di Minetest!
+
+# Numero massimo di giocatori connessi simultaneamente
+#max_users = 15
+
+# Impostare a true per impedire la connessione di client vecchi
+#strict_protocol_version_checking = false
+
+# Tempo di vita in secondi per una entità oggetto. Valore predefinito: 900s
+# Impostare a -1 per disattivare questa caratteristica
+#item_entity_ttl = 900
+
+# Impostare a true per abilitare la modalità creativa (inventario illimitato)
+#creative_mode = false
+
+# Permettere che i personaggi si facciano male e muoiano
+#enable_damage = false
+
+# Eliminare tutti i mob aggressivi
+#only_peaceful_mobs = false
+
+# Un seme casuale prestabilito per la generazione di una nuova mappa, si lasci
+# il campo vuoto per un seme scelto casualmente
+#fixed_map_seed =
+
+# Fornire un po' di cose ai personaggi agli inizi
+#give_initial_stuff = false
+
+# I nuovi utenti devono inserire questa password
+#default_password =
+
+# Privilegi disponibili:
+#
+# interact : la possibilità di interagire con gli oggetti
+# shout    : gridare
+# teleport : teletrasportarsi usando le coordinate di un punto
+# settime  : impostare l'orario del mondo virtuale (es.: 6000 = 6:00)
+# privs    : visualizzare l'elenco dei privilegi disponibili
+#
+# Usate /privs nel gioco per un elenco completo dei privilegi disponibili in
+# base alla configurazione del vostro server e dei vostri moduli.
+
+# Privilegi garantiti ai personaggi
+#default_privs = interact, shout
+
+# Se il nome dei personaggi debba essere mostrato nei client connessi senza
+# nessun limite di distanza
+#unlimited_player_transfer_distance = true
+
+# Se permettere ai personaggi di uccidersi tra loro
+#enable_pvp = true
+
+# Se questa impostazione è attiva, i personaggi (ri)appariranno sempre alla
+# posizione data
+#static_spawnpoint = 0, 10, 0
+
+# Se è impostata a true, i nuovi personaggi non potranno accedere senza
+# scegliere una password
+#disallow_empty_password = false
+
+# Se è impostata a true, si disabilita la protezione contro la truffa nella
+# modalità multiutente
+#disable_anticheat = false
+
+# Se è impostata a true, le azioni compiute vengono registrate nel caso in cui
+# le si dovesse ripetere (una forma di copia di sicurezza)
+#enable_rollback_recording = false
+
+# Gestione delle chiamate deprecate dell'api lua
+#
+# legacy : (provare a) emulare il vecchio comportamento
+#          (comportamento predefinito per la versione di rilascio)
+#    log : emulare e registrare la traccia delle chiamate deprecate
+#          (comportamento predefinito per la versione di debug)
+#   error: interrompere all'uso di chiamate deprecate
+#          (comportamento suggerito per gli sviluppatori di moduli)
+#
+#deprecated_lua_api_handling = legacy
+
+# Intervallo di stampa dei dati dello strumento di analisi comportamentale.
+# #0 = disabilitato.
+#profiler_print_interval = 0
+
+# Abilitare le informazioni di debug del generatore della mappa
+#enable_mapgen_debug_info = false
+
+# Distanza (in blocchi mappa) dalla quale il client è a conoscenza degli
+# oggetti attivi
+#active_object_send_range_blocks = 3
+
+# Dimensione dell'area di blocchi mappa soggetta alle funzioni degli oggetti
+# attivi. (Attivo = gli oggetti vengono caricati e i Modificatori di Oggetti
+# Attivi ["A.B.M." = Active Block Modifier, n.d.t.] vengono eseguiti.
+#active_block_range = 2
+
+# Quanti blocchi mappa vengono inviati simultaneamente a ciascun client
+#max_simultaneous_block_sends_per_client = 10
+
+# Quanti blocchi mappa vengono inviati simultaneamente a ciascun server
+#max_simultaneous_block_sends_server_total = 40
+
+# Da quale distanza i blocchi mappa vengono inviati ai client
+# (valore * 16 cubi)
+#max_block_send_distance = 10
+
+# Da quale distanza i blocchi mappa vengono generati per i client
+# (valore * 16 cubi)
+#max_block_generate_distance = 6
+
+# Numero di blocchi mappa extra che possono essere caricati da /clearobjects
+# per volta. Questo è uno scambio tra sovraccarico di transazioni sqlite e
+# consumo di memoria. (4096 = 100MB, come regola empirica)
+#max_clearobjects_extra_loaded_blocks = 4096
+
+# Numero massimo dei blocchi mappa caricati forzatamente
+#max_forceloaded_blocks = 16
+
+# Intervallo di invio dell'ora del giorno ai client
+#time_send_interval = 5
+
+# Durata del ciclo giorno/notte.
+#
+#   0 = l'orario del mondo virtuale resta sempre lo stesso
+#   1 = 24 ore
+#  72 = 20 minuti
+# 360 = 4 minuti
+#
+#time_speed = 72
+
+# Durata dell'anno in giorni per il cambio delle stagioni.
+# Col valore predefinito di time_speed (72) un anno equivale a 5 giorni reali.
+# 30 giorni equivalgono a 10 ore reali.
+#year_days = 30
+
+# Intervallo di tempo dopo cui il server deve scaricare i dati inutilizzati.
+#server_unload_unused_data_timeout = 29
+
+# Numero massimo di oggetti immagazzinati staticamente in un blocco mappa
+#max_objects_per_block = 49
+
+# Intervallo di salvataggio dei cambiamenti importanti nel mondo virtuale
+#server_map_save_interval = 5.3
+
+# Impostazione di PRAGMA synchronous, solo valori numerici: 0, 1, 2
+# ( http://www.sqlite.org/pragma.html#pragma_synchronous )
+#sqlite_synchronous = 2
+
+# Per ridurre il tempo di latenza, il trasferimento dei blocchi mappa viene
+# rallentato quando un giocatore sta costruendo qualcosa.
+# Questa impostazione stabilisce di quanto essi vengano rallentati dopo il
+# posizionamento di un cubo.
+#full_block_send_enable_min_time_from_building = 2.0
+
+# Durata di uno scatto del server e dell'intervallo secondo cui gli oggetti
+# vengono generalmente aggiornati sulla rete
+#dedicated_server_step = 0.1
+
+# Ignorare gli errori di caricamento del mondo virtuale.
+# Può essere impostata a true per disabilitare lo spegnimento del mondo in
+# caso di dati non validi riguardanti il mondo stesso.
+#ignore_world_load_errors = false
+
+# Specifica lo URL da cui il client recupera i file multimediali, invece di
+# usare UDP $filename dovrebbe essere accessibile da $remote_media$filename
+# tramite cURL (ovviamente, remote_media dovrebbe terminare con una barra "/").
+# I file che non fossero presenti sarebbero recuperati nel solito modo.
+#remote_media =
+
+# Livello di registrazione del file debug.txt
+# 
+# 0 = niente
+# 1 = errori e debug
+# 2 = azioni
+# 3 = informazioni
+# 4 = prolisso
+#
+#debug_log_level = 2
+
+# Numero massimo di blocchi mappa che possono essere accodati per il
+# caricamento.
+#emergequeue_limit_total = 256
+
+# Numero massimo di blocchi mappa da accodare che devono essere caricati dal
+# file. Lasciare in bianco per fare in modo che venga scelto in modo automatico
+# un ammontare appropriato.
+#emergequeue_limit_diskonly = 32
+
+# Numero massimo di blocchi mappa da accodare che devono essere generati.
+# Lasciare in bianco per fare in modo che venga scelto in modo automatico un
+# ammontare appropriato.
+#emergequeue_limit_generate = 32
+
+# Numero di processi emergenti da usare. Lasciate questo campo in bianco, o
+# aumentatene il numero, per usare processi multipli.
+# Sui sistemi multiprocessore, questa impostazione migliorerà molto la velocità
+# del generatore della mappa, al prezzo di caverne leggermente scadenti.
+#num_emerge_threads = 1
+
+# Numero massimo di pacchetti inviati ad ogni passo di invio, se avete una
+# connessione lenta provate a ridurlo, ma non riducetelo a un numero inferiore
+# al doppio del numero di client impostato
+#max_packets_per_iteration = 1024
+
+####################
+#
+# Cose della fisica
+#
+
+# Accelerazione di movimento predefinita
+#movement_acceleration_default = 3
+
+# Accelerazione di movimento in aria
+#movement_acceleration_air = 2
+
+# Accelerazione di movimento in modalità veloce
+#movement_acceleration_fast = 10
+
+# Velocità di movimento della camminata
+#movement_speed_walk = 4
+
+# Velocità di movimento accovacciato/strisciando
+#movement_speed_crouch = 1.35
+
+# Velocità di movimento in corsa
+#movement_speed_fast = 20
+
+# Velocità di movimento in arrampicamento
+#movement_speed_climb = 2
+
+# Velocità di movimento in salto
+#movement_speed_jump = 6.5
+
+# Velocità di movimento in discesa
+#movement_speed_descend = 6
+
+# Fluidità del movimento dei liquidi
+#movement_liquid_fluidity = 1
+
+# Omogeneità della fluidità del movimento dei liquidi
+#movement_liquid_fluidity_smooth = 0.5
+
+# Velocità di sprofondamento dei liquidi
+#movement_liquid_sink = 10
+
+# Gravità di movimento
+#movement_gravity = 9.81
+
+####################
+#
+# Cose del generatore della mappa
+#
+
+# Nome del generatore della mappa da usare.
+# Attualmente supportati: v6, v7, indev, singlenode, math
+#mg_name = v6
+
+# Livello dell'acqua della mappa.
+#water_level = 1
+
+# Dimensione delle aree da generare.
+#chunksize = 5
+
+# Attributi della generazione della mappa.
+# Attualmente supportati:
+#
+# trees    = alberi
+# caves    = grotte
+# flat     = piatta
+# dungeons = sotterranei
+# light    = luce
+#
+# Gli attributi non specificati nella stringa valori non sono modificati dal
+# solito.
+# Per disattivare espressamente un attributo, anteponete "no" all'inizio:
+# per esempio: notrees
+#
+#mg_flags = trees, caves
+
+# Attributi della generazione della mappa specifici per il Generatore Mappe V6.
+# Attualmente supportati:
+#
+# biomeblend = sfuma tra un bioma e l'altro
+# jungles    = giungle
+# mudflow    = colata di fango
+#
+#mgv6_spflags = biomeblend
+
+# Quanto sono larghi deserti e spiagge
+#mgv6_freq_desert = 0.45
+#mgv6_freq_beach = 0.15
+
+# Attributi del Rumore di Perlin per svariati parametri della generazione della
+# mappa:
+#
+# Compensazione, Scala, Fattore di distribuzione, Scostamento del seme casuale,
+# Numero di ottave, Persistenza
+
+# Base del terreno
+#mgv6_np_terrain_base = -4, 20, (250, 250, 250), 82341, 5, 0.6
+
+# Terreno elevato
+#mgv6_np_terrain_higher = 20, 16, (500, 500, 500), 85039, 5, 0.6
+
+# Ripidità
+#mgv6_np_steepness = 0.85, 0.5, (125, 125, 125), -932, 5, 0.7
+
+# Scelta dell'altezza
+#mgv6_np_height_select = 0.5, 1, (250, 250, 250), 4213, 5, 0.69
+
+# Fango
+#mgv6_np_mud = 4, 2, (200, 200, 200), 91013, 3, 0.55
+
+# Spiaggia
+#mgv6_np_beach = 0, 1, (250, 250, 250), 59420, 3, 0.50
+
+# Bioma
+#mgv6_np_biome = 0, 1, (250, 250, 250), 9130, 3, 0.50
+
+# Grotta
+#mgv6_np_cave = 6, 6, (250, 250, 250), 34329, 3, 0.50
+
+# Umidità
+#mgv6_np_humidity = 0.5, 0.5, (500, 500, 500), 72384, 4, 0.66
+
+# Alberi
+#mgv6_np_trees = 0, 1, (125, 125, 125), 2, 4, 0.66
+
+# Alberi di mele
+#mgv6_np_apple_trees = 0, 1, (100, 100, 100), 342902, 3, 0.45
+
+####################
+#
+# Generatore di mappe V7
+
+# Attributi
+#mgv7_spflags = mountains, ridges
+
+# Terreno
+#mgv7_np_terrain = 10, 12, (350, 350, 350), 82341, 5, 0.6
+
+# ???
+#mgv7_np_bgroup = 0.5, 0.3125, (350, 350, 350), 5923, 2, 0.6
+
+# Calore
+#mgv7_np_heat = 25, 50, (500, 500, 500), 35293, 1, 0
+
+# Umidità
+#mgv7_np_humidity = 50, 31.25, (750, 750, 750), 12094, 2, 0.6
+
+
+####################
+#
+# Generatore di mappe Indev
+#
+# Compensazione, Scala, Fattore di distribuzione, Scostamento del seme casuale,
+# Numero di ottave, Persistenza
+
+# Base del terreno
+#mgindev_np_terrain_base   = -4,   20,  (250, 250, 250), 82341, 5, 0.6,  10,  10
+
+# Terreno elevato
+#mgindev_np_terrain_higher = 20,   16,  (500, 500, 500), 85039, 5, 0.6,  10,  10
+
+# Ripidità
+#mgindev_np_steepness      = 0.85, 0.5, (125, 125, 125), -932,  5, 0.7,  2,   10
+
+# Fango
+#mgindev_np_mud            = 4,    2,   (200, 200, 200), 91013, 3, 0.55, 1,   1
+
+# Isole fluttuanti 1
+#mgindev_np_float_islands1 = 0,    1,   (64,  64,  64 ), 3683,  5, 0.5,  1,   1.5
+
+# Isole fluttuanti 2
+#mgindev_np_float_islands2 = 0,    1,   (8,   8,   8  ), 9292,  2, 0.5,  1,   1.5
+
+# Isole fluttuanti 3
+#mgindev_np_float_islands3 = 0,    1,   (256, 256, 256), 6412,  2, 0.5,  1,   0.5
+
+# Bioma
+#mgindev_np_biome          = 0,    1,   (250, 250, 250), 9130,  3, 0.50, 1,   10
+
+# Altezza da cui vengono generate le isole fluttuanti, 0 per disabilitarle
+#mgindev_float_islands = 500
+
+####################
+#
+# Generatore di mappe Math
+#
+#       sphere = sfera
+#    mandelbox = frattale mandelbox
+# mengersponge = frattale Spugna di Menger
+#
+# Non dimenticatevi di impostare water_level = -30000
+#
+#mgmath_generator = mandelbox
+
+# Abilitare/disabilitare IPv6
+#enable_ipv6 = true
+
+# Abilitare/disabilitare un server IPv6.
+# Un server IPv6 può essere ristretto a client IPv6, dipendentemente dalla
+# configurazione del sistema.
+# Ignoratelo se è stato impostato bind_address
+#ipv6_server = false
+
+# Script del menù principale
+#main_menu_script =
+
+# Gestore dei giochi del menù principale
+#main_menu_game_mgr = 0
+
+# Gestore dei moduli del menù principale
+#main_menu_mod_mgr = 1
+
+# URL di scaricamento dei moduli
+#modstore_download_url = https://forum.minetest.net/media/
+
+# URL dell'elenco dei moduli
+#modstore_listmods_url = https://forum.minetest.net/mmdb/mods/
+
+# URL dei dettagli dei moduli
+#modstore_details_url  = https://forum.minetest.net/mmdb/mod/*/
+
+# Fa in modo che DirectX lavori con LuaJIT. Disabilitarla se causa problemi.
+#high_precision_fpu = true
+
+# Ignorare la lingua. Quando non è fornito nessun valore (modo predefinito)
+# viene utilizzata la lingua di sistema.
+# Controllate la cartella di nome "locale" per l'elenco delle traduzioni
+# disponibili.
+#language =
